@@ -2,3 +2,18 @@
 
 === Initial Release ===
 * in development
+
+=== Current Release Goals ===
+- extend existing cataloginventory functionality to use a stock/stock_item interface with vanilla stock/stock_item
+- add unit testing for stock/stock_item interface(s)
+- extend existing cataloginventory functionality to be multiwarehouse
+    - ability to add new "stock" warehouse
+    - ability to assign different default "stock" warehouse to stores
+    - ability to add available "stock" warehouse(s) to stores
+- add unit testing for multiwarehouse features
+- add admin interfaces for "stock" warehouse management, including store assignment
+
+=== Future List ===
+- add interface specification for "stock" warehouses
+- add master/slave concept for "stock" warehouse; stock master
+- add events which flush inventory cache, like order placement
