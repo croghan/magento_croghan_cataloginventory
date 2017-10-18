@@ -1,6 +1,6 @@
 <?php
 /**
- * Catalog Inventory Stock Model
+ * Catalog Inventory Stock Abstract Model
  *
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item _getResource()
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item getResource()
@@ -40,11 +40,13 @@
  * @method Croghan_CatalogInventory_Model_Stock_Item setUseConfigEnableQtyIncrements(int $value)
  * @method Croghan_CatalogInventory_Model_Stock_Item setEnableQtyIncrements(int $value)
  *
+ * Will contain all related changes to expand on existing multi-stock_item stub code.
+ * 
  * @category    Croghan
  * @package     Croghan_CatalogInventory
  * @author      Michael Croghan <magento@digitalkeg.com>
  */
-class Croghan_CatalogInventory_Model_Stock_Item extends Croghan_CatalogInventory_Model_Stock_Item_Abstract
+abstract class Croghan_CatalogInventory_Model_Stock_Item_Abstract extends Mage_CatalogInventory_Model_Stock_Item
 {
     // tbd //
 }
