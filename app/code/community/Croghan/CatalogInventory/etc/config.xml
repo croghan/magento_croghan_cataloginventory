@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Croghan_CatalogInventory>
-            <version>1.0.0</version>
+            <version>0.0.1</version>
         </Croghan_CatalogInventory>
     </modules>
     <global>
@@ -19,18 +19,48 @@
         <models>
             <croghan_cataloginventory>
                 <class>Croghan_CatalogInventory_Model</class>
+                <resourceModel>croghan_cataloginventory_resource</resourceModel>
             </croghan_cataloginventory>
+            <croghan_cataloginventory_resource>
+                <class>Croghan_CatalogInventory_Model_Resource</class>
+                <entities>
+                    <stock>
+                        <table>croghan_cataloginventory_stock</table>
+                    </stock>
+                    <stock_item>
+                        <table>croghan_cataloginventory_stock_item</table>
+                    </stock_item>
+                    <stock_status>
+                        <table>croghan_cataloginventory_stock_status</table>
+                    </stock_status>
+                    <stock_status_indexer_idx>
+                        <table>croghan_cataloginventory_stock_status_idx</table>
+                    </stock_status_indexer_idx>
+                    <stock_status_indexer_tmp>
+                        <table>croghan_cataloginventory_stock_status_tmp</table>
+                    </stock_status_indexer_tmp>
+                </entities>
+            </croghan_cataloginventory_resource>
             <cataloginventory>
                 <rewrite>
+                    <class>Croghan_CatalogInventory_Model</class>
+                    <resourceModel>croghan_cataloginventory_resource</resourceModel>
                     <stock>Croghan_CatalogInventory_Model_Stock</stock>
                     <stock_item>Croghan_CatalogInventory_Model_Stock_Item</stock_item>
+                    <stock_status>Croghan_CatalogInventory_Model_Stock_Status</stock_status>
                 </rewrite>
             </cataloginventory>
+            <cataloginventory_resource>
+                <rewrite>
+                    <class>Croghan_CatalogInventory_Model_Resource</class>
+                </rewrite>
+            </cataloginventory_resource>
         </models>
         <resources>
             <croghan_cataloginventory_setup>
                 <setup>
                     <module>Croghan_CatalogInventory</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
                 </setup>
             </croghan_cataloginventory_setup>
         </resources>
