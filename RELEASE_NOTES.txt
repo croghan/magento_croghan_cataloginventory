@@ -3,17 +3,61 @@
 === Initial Release ===
 * in development
 
+=============================
 === Current Release Goals ===
-- extend existing cataloginventory functionality to use a stock/stock_item interface with vanilla stock/stock_item
-- add unit testing for stock/stock_item interface(s)
-- extend existing cataloginventory functionality to be multiwarehouse
-    - ability to add new "stock" warehouse
-    - ability to assign different default "stock" warehouse to stores
-    - ability to add available "stock" warehouse(s) to stores
-- add unit testing for multiwarehouse features
-- add admin interfaces for "stock" warehouse management, including store assignment
+=============================
 
-=== Future List ===
-- add interface specification for "stock" warehouses
-- add master/slave concept for "stock" warehouse; stock master
-- add events which flush inventory cache, like order placement
+Currently, stock, stock_item and stock_status represent an accumulation of inventory data and rules for products. The product quantities are included as well, and function as single source for inventory count. I'd like to add warehouses. Each warehouse represents both a location and inventory count for any number of available stock items. A warehouse shall be affiliated to a store. On update routines of quantity for stock status, it shall be an accumulation of product count from the warehouses affiliated to a given store. On update routines of quantity for stock item, it shall be an accumulation of product count from stock status; an overall available total quantity.
+
+Though the ability to create multiple warehouses shall exist, for the purpose of laying the foundation, only the assigned "default" warehouse will matter.
+
+=============================
+=== Future Release Goals ====
+=============================
+
+- add features and admin interface for ability to choose a warehouse for order fulfillment; single and multiple packages.
+    - if there is a desire to adjust and bill for multi-location shipment, will revisit requirements for it
+- add location based warehouse quantity check
+- add warehouse interface
+    - add master/slave concept to warehouses
+    - implement warehouse interface for vanilla features
+- create an importexport for warehouses and warehouse items; separate module
+- add warehouse item history (change log)
+- possibly multiple vendor sources for same item; manufacturer related additions
+
+=== 0.0.1 ===================
+- extend existing cataloginventory functionality to be multiwarehouse
+    - duplicate Mage_CatalogInventory setup; don't want to stomp on existing data
+    - add new columns to support multiwarehouse
+        - add store_id to stock_status related tables; unique key needs to be website_id & store_id
+        - update stock_status indexer to include store_id
+- create warehouse models & resources
+    - shall include name and zipcode (whatever is needed by shipping model)
+        - will need to override what location data shipping model uses for origin
+    - create M-M warehouse & store bridge
+        - store_id (fk to core_store) & warehouse_id, and default flag
+    - ability to add new warehouse
+    - ability to assign a warehouse to a store
+- create warehouse item models & resources
+    - shall include warehouse_id (fk) 
+    - ability to add new warehouse item; coupled with stock item
+    - ability to generate quantity count by store
+    - ability to generate quantity count by website
+- update stock status indexer
+    - should update the quantity from warehouse item data
+- update stock item
+    - should update quantity from multiple stock status quantities
+- extend observer events to ensure proper handling of multi-stock
+    - catalog_product_load_after; add stock_item data to a product
+    - catalog_product_clear; clears product Id from observer class array regarding stock item data
+    - catalog_product_collection_load_after; adds stock status data to product collection
+    - sales_quote_item_collection_products_after_load; adds stock item data to product collection
+- add admin interfaces for warehouse management
+    - list all warehouses
+    - create/remove warehouses
+    - assign storeincluding store assignment
+- add admin interfaces for "stock" warehouse management, including store assignment
+- unit tests for multi-warehouse features
+
+=== 0.0.2 ===================
+- TBD
