@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Croghan_CatalogInventory>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </Croghan_CatalogInventory>
     </modules>
     <global>
@@ -39,6 +39,15 @@
                     <stock_status_indexer_tmp>
                         <table>croghan_cataloginventory_stock_status_tmp</table>
                     </stock_status_indexer_tmp>
+                    <warehouse>
+                        <table>croghan_cataloginventory_warehouse</table>
+                    </warehouse>
+                    <warehouse_item>
+                        <table>croghan_cataloginventory_warehouse_item</table>
+                    </warehouse_item>
+                    <warehouse_store>
+                        <table>croghan_cataloginventory_warehouse_store</table>
+                    </warehouse_store>
                 </entities>
             </croghan_cataloginventory_resource>
             <cataloginventory>

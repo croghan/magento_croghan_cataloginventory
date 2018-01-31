@@ -56,7 +56,6 @@ Though the ability to create multiple warehouses shall exist, for the purpose of
     - list all warehouses
     - create/remove warehouses
     - assign storeincluding store assignment
-- add admin interfaces for "stock" warehouse management, including store assignment
 - unit tests for multi-warehouse features
 
 === 0.0.2 ===================

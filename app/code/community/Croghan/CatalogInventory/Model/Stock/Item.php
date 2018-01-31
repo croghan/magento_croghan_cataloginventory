@@ -1,6 +1,6 @@
 <?php
 /**
- * Catalog Inventory Stock Model
+ * Catalog Inventory Stock Item Model
  *
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item _getResource()
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item getResource()
@@ -39,6 +39,9 @@
  * @method int getUseConfigEnableQtyIncrements()
  * @method Croghan_CatalogInventory_Model_Stock_Item setUseConfigEnableQtyIncrements(int $value)
  * @method Croghan_CatalogInventory_Model_Stock_Item setEnableQtyIncrements(int $value)
+ *
+ * Will contain additions to the original stock_item modification for new
+ * multi-warehouse features.
  *
  * @category    Croghan
  * @package     Croghan_CatalogInventory

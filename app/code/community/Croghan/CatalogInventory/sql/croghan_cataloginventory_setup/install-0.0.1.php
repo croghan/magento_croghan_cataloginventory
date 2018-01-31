@@ -13,6 +13,29 @@ $installer = $this;
 
 $installer->startSetup();
 
+
+// not used < 0.0.1
+if($installer->getConnection()->isTableExists($installer->getTable('croghan_cataloginventory/stock'))){
+    $installer->getConnection()->dropTable($installer->getTable('croghan_cataloginventory/stock'));
+}
+// not used < 0.0.1
+if($installer->getConnection()->isTableExists($installer->getTable('croghan_cataloginventory/stock_item'))){
+    $installer->getConnection()->dropTable($installer->getTable('croghan_cataloginventory/stock_item'));
+}
+// not used < 0.0.1
+if($installer->getConnection()->isTableExists($installer->getTable('croghan_cataloginventory/stock_status'))){
+    $installer->getConnection()->dropTable($installer->getTable('croghan_cataloginventory/stock_status'));
+}
+// not used < 0.0.1
+if($installer->getConnection()->isTableExists($installer->getTable('croghan_cataloginventory/stock_status_indexer_idx'))){
+    $installer->getConnection()->dropTable($installer->getTable('croghan_cataloginventory/stock_status_indexer_idx'));
+}
+// not used < 0.0.1
+if($installer->getConnection()->isTableExists($installer->getTable('croghan_cataloginventory/stock_status_indexer_tmp'))){
+    $installer->getConnection()->dropTable($installer->getTable('croghan_cataloginventory/stock_status_indexer_tmp'));
+}
+
+
 /**
  * Create table 'cataloginventory_stock'
  */

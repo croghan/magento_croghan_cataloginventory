@@ -7,7 +7,8 @@
  * @method string getStockName()
  * @method Croghan_CatalogInventory_Model_Stock setStockName(string $value)
  *
- * Will contain all related changes to expand on existing multi-stock stub code.
+ * Will contain all necessary modifications to original stock to work with
+ * multi-warehouse features.
  * 
  * @category    Croghan
  * @package     Croghan_CatalogInventory

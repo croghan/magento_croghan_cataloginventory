@@ -8,5 +8,5 @@
  */
 interface class Croghan_CatalogInventory_Model_Stock_Interface
 {
-    // tbd //
+    // tbd; may not be needed //
 }

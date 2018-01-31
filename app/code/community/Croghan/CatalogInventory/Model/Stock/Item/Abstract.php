@@ -1,6 +1,6 @@
 <?php
 /**
- * Catalog Inventory Stock Abstract Model
+ * Catalog Inventory Stock Item Abstract Model
  *
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item _getResource()
  * @method Croghan_CatalogInventory_Model_Resource_Stock_Item getResource()
@@ -40,7 +40,8 @@
  * @method Croghan_CatalogInventory_Model_Stock_Item setUseConfigEnableQtyIncrements(int $value)
  * @method Croghan_CatalogInventory_Model_Stock_Item setEnableQtyIncrements(int $value)
  *
- * Will contain all related changes to expand on existing multi-stock_item stub code.
+ * Will contain all necessary modifications to original stock_item to work with
+ * multi-warehouse features.
  * 
  * @category    Croghan
  * @package     Croghan_CatalogInventory
